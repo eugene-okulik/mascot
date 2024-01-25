@@ -11,7 +11,7 @@ print(final_element)
 my_dict['list'].append("test")
 my_dict['list'].pop(1)
 
-my_dict['dict']["('i am a tuple',)"] = True
+my_dict['dict'][('i am a tuple',)] = True
 del my_dict['dict']['cycle']
 
 my_dict['set'].add("Hello world")
