@@ -3,11 +3,19 @@ import sys
 sys.set_int_max_str_digits(0)
 
 
-def fibonacci_number(n):
+def fibonacci_generator():
     a, b = 0, 1
-    for _ in range(n):
+    while True:
+        yield a
         a, b = b, a + b
-    return a
+
+
+def fibonacci_number(n):
+    global result
+    fib_gen = fibonacci_generator()
+    for _ in range(n):
+        result = next(fib_gen)
+    return result
 
 
 print(fibonacci_number(5))
