@@ -35,6 +35,7 @@ print(book3)
 print(book4)
 print(book5)
 
+
 # Второй класс
 
 class Schoolbook(Book):
