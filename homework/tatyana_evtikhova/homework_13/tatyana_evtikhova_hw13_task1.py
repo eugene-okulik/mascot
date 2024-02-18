@@ -20,6 +20,7 @@ def process_action(action, date):
         days_difference = (today - date).days
         print(days_difference)
 
+
 for line in lines:
     parts = line.split(" - ")
     date_str = parts[0].split('. ')[1]
