@@ -62,3 +62,4 @@ for query in [
 
 db.commit()
 db.close()
+
