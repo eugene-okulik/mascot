@@ -55,13 +55,13 @@ cursor.executemany('INSERT INTO marks (value, lesson_id, student_id) VALUES (%s,
 for query in ['SELECT * FROM marks WHERE student_id = %s',
               'SELECT * FROM books WHERE taken_by_student_id = %s',
               '''
-    SELECT s.*, b.title AS book_title, m.*, l.*, su.title AS subject_title, g.title AS group_title 
-    FROM students s 
-    LEFT JOIN books b ON s.id = b.taken_by_student_id 
-    LEFT JOIN marks m ON s.id = m.student_id 
-    LEFT JOIN lessons l ON m.lesson_id = l.id 
-    LEFT JOIN subjets su ON l.subject_id = su.id 
-    LEFT JOIN `groups` g ON s.group_id = g.id 
+    SELECT s.*, b.title AS book_title, m.*, l.*, su.title AS subject_title, g.title AS group_title
+    FROM students s
+    LEFT JOIN books b ON s.id = b.taken_by_student_id
+    LEFT JOIN marks m ON s.id = m.student_id
+    LEFT JOIN lessons l ON m.lesson_id = l.id
+    LEFT JOIN subjets su ON l.subject_id = su.id
+    LEFT JOIN `groups` g ON s.group_id = g.id
     WHERE s.id = %s
     '''
               ]:
