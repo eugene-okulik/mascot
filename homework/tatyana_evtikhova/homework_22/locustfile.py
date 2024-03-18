@@ -55,4 +55,3 @@ class ApiUser(HttpUser):
                 }
             }
         create_response = self.client.post("/objects", json=create_payload)
-        
