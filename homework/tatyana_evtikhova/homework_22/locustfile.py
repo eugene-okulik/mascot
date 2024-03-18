@@ -15,8 +15,8 @@ class ApiUser(HttpUser):
                 "Hard disk size": "1 TB"
             }
         }
-        create_response = self.client.post("/objects", json=create_payload)
-        object_id = create_response.json().get('id', None) if create_response.ok else None
+        self.client.post("/objects", json=create_payload)
+        object_id = "some_id_retrieved_elsewhere"
 
         if object_id:
             update_payload = {
@@ -46,12 +46,12 @@ class ApiUser(HttpUser):
     @task(3)
     def create_object(self):
         create_payload = {
-                "name": "Apple MacBook Air",
-                "data": {
-                    "year": 2017,
-                    "price": 870.23,
-                    "CPU model": "Intel Core i5",
-                    "Hard disk size": "128 Gb"
-                }
+            "name": "Apple MacBook Air",
+            "data": {
+                "year": 2017,
+                "price": 870.23,
+                "CPU model": "Intel Core i5",
+                "Hard disk size": "128 Gb"
             }
-        create_response = self.client.post("/objects", json=create_payload)
+        }
+        self.client.post("/objects", json=create_payload)
