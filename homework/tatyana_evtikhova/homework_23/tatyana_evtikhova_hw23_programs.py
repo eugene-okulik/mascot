@@ -53,12 +53,10 @@ table = modal_body.find_element(By.TAG_NAME, "table")
 rows = table.find_elements(By.TAG_NAME, "tr")
 data = {}
 for row in rows:
-        cells = row.find_elements(By.TAG_NAME, "td")
-        if len(cells) == 2:
-            label = cells[0].text
-            value = cells[1].text
-            data[label] = value
+    cells = row.find_elements(By.TAG_NAME, "td")
+    if len(cells) == 2:
+        label = cells[0].text
+        value = cells[1].text
+        data[label] = value
 for label, value in data.items():
     print(f"{label}: {value}")
-
-
