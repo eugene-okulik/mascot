@@ -25,4 +25,3 @@ def page(context: BrowserContext):
     page = context.new_page()
     # page.set_viewport_size({'width': 1920, 'height': 1080})
     return page
-
