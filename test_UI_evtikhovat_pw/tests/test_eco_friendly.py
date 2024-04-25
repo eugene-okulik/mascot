@@ -1,7 +1,6 @@
 import pytest
 
 
-# failed
 @pytest.mark.extended
 def test_descending_order(ecofriendly_page):
     ecofriendly_page.open_page()
@@ -9,7 +8,6 @@ def test_descending_order(ecofriendly_page):
     ecofriendly_page.check_first_item_after_sorting_descending()
 
 
-# passed
 @pytest.mark.extended
 def test_sorting(ecofriendly_page):
     ecofriendly_page.open_page()
@@ -17,7 +15,6 @@ def test_sorting(ecofriendly_page):
     ecofriendly_page.check_first_item_after_sorting()
 
 
-# passed
 @pytest.mark.smoke
 def test_switch_view(ecofriendly_page):
     ecofriendly_page.open_page()

@@ -12,7 +12,7 @@ class Sale(BasePage):
         assert promo_info == 'Every $200-plus purchase!'
 
     def woman_deals_redirect(self):
-        women_deals_link = self.page.locator("a.block-promo.sale-main").click()
+        self.page.locator("a.block-promo.sale-main").click()
 
     def check_redirection_to_woman_deals(self):
         expected_url = "https://magento.softwaretestingboard.com/promotions/women-sale.html"

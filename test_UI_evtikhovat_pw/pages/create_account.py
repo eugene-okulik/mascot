@@ -10,13 +10,12 @@ class AccountCreation(BasePage):
 
     def fill_registration_form(self, firstname, lastname, password, confirmation_password):
         email = self.generate_random_email()
-        firstname_field = self.page.locator("#firstname").fill(firstname)
-        lastname_field = self.page.locator("#lastname").fill(lastname)
-        email_field = self.page.locator("#email_address").fill(email)
-        password_field = self.page.locator("#password").fill(password)
-        confirmation_password_field = self.page.locator("#password-confirmation").fill(
-            confirmation_password)
-        button = self.page.locator('.action.submit.primary').click()
+        self.page.locator("#firstname").fill(firstname)
+        self.page.locator("#lastname").fill(lastname)
+        self.page.locator("#email_address").fill(email)
+        self.page.locator("#password").fill(password)
+        self.page.locator("#password-confirmation").fill(confirmation_password)
+        self.page.locator('.action.submit.primary').click()
 
     def generate_random_email(self):
         random_string = ''.join(random.choices(string.ascii_lowercase, k=8))
@@ -32,8 +31,8 @@ class AccountCreation(BasePage):
         expect(message_element).to_have_text('Click “Write for us” link in the footer to submit a guest post')
 
     def invalid_email(self):
-        email_input = self.page.locator("#email_address").fill('invalid email')
-        submit_button = self.page.locator('[title="Create an Account"]').click()
+        self.page.locator("#email_address").fill('invalid email')
+        self.page.locator('[title="Create an Account"]').click()
 
     def check_email_validation(self):
         error_locator = self.page.locator('#email_address-error')
