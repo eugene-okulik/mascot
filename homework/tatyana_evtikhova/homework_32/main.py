@@ -7,7 +7,7 @@ def check_website(url):
     if response.status_code == 200:
         print(f'Сайт {url} доступен')
     else:
-        print(f'Сайт {url} недоступен. Статус код: {respo.status_code}')
+        print(f'Сайт {url} недоступен. Статус код: {response.status_code}')
 
 
 def main():
